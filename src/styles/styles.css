@@ -6,8 +6,8 @@
 
 @import 'blocks/visually-hidden.css';
 @import 'blocks/page.css';
-@import 'blocks/header.css';
-@import 'blocks/logo.css';
+@import '../includes/header/header.css';
+@import '../includes/header/logo.css';
 @import 'blocks/navigation.css';
 @import 'blocks/articles.css';
 @import 'blocks/archive.css';
