@@ -5,14 +5,14 @@
 /* Blocks */
 
 @import 'blocks/visually-hidden.css';
-@import 'blocks/page.css';
+@import '../layouts/page/page.css';
 @import '../includes/header/header.css';
 @import '../includes/header/logo.css';
-@import 'blocks/navigation.css';
-@import 'blocks/articles.css';
+@import '../layouts/page/navigation.css';
+@import '../layouts/page/articles.css';
 @import '../layouts/article/archive.css';
-@import 'blocks/notice.css';
-@import 'blocks/main.css';
+@import '../layouts/page/notice.css';
+@import '../layouts/page/main.css';
 @import '../layouts/article/content.css';
 @import 'blocks/media.css';
 @import '../includes/aside/links.css';
