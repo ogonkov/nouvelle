@@ -19,7 +19,7 @@
 @import '../includes/footer/footer.css';
 @import '../layouts/article/article.css';
 @import '../layouts/article/authors.css';
-@import 'blocks/blob.css';
+@import '../layouts/page/blob/blob.css';
 @import '../layouts/article/related-articles.css';
 @import '../includes/article-card/article-card.css';
 @import '../includes/conference-link/conference-link.css';
