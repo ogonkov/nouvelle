@@ -34,6 +34,7 @@ gulp.task('clean', () => {
         '!dist/styles/styles.css',
         'dist/scripts/**/*',
         '!dist/scripts/scripts.js',
+        'dist/includes/**/*',
     ]);
 });
 
