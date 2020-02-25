@@ -35,6 +35,7 @@ gulp.task('clean', () => {
         'dist/scripts/**/*',
         '!dist/scripts/scripts.js',
         'dist/includes/**/*',
+        'dist/layouts/**/*',
     ]);
 });
 

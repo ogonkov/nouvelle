@@ -6,6 +6,7 @@ module.exports = function(config) {
     config.addPassthroughCopy('src/scripts');
     config.addPassthroughCopy('src/**/*.(html|gif|jpg|png|svg|zip)');
     config.addPassthroughCopy('src/includes');
+    config.addPassthroughCopy('src/layouts');
 
     config.addCollection('tagList', (collection) => {
         const set = new Set();
