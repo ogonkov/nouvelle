@@ -16,7 +16,7 @@
 @import 'blocks/content.css';
 @import 'blocks/media.css';
 @import 'blocks/links.css';
-@import 'blocks/footer.css';
+@import '../includes/footer/footer.css';
 @import 'blocks/article.css';
 @import 'blocks/authors.css';
 @import 'blocks/blob.css';
