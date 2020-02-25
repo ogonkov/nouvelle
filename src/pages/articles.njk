@@ -19,7 +19,7 @@ permalink: articles/index.html
     <ul class="articles articles{{ articleType }}">
         {%- for article in collections.article | reverse -%}
             <li class="articles__item articles__item{{ articleType }}">
-                {% include 'article-card.njk' %}
+                {% include 'article-card/article-card.njk' %}
             </li>
         {%- endfor -%}
     </ul>

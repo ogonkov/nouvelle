@@ -19,7 +19,7 @@ permalink: index.html
                 {% if article.data.featured == true %}
                     articles__item--featured
                 {% endif %}">
-                {% include 'article-card.njk' %}
+                {% include 'article-card/article-card.njk' %}
             </li>
         {%- endfor -%}
     </ul>

@@ -77,7 +77,7 @@ layout: page.njk
         <ul class="articles articles{{ articleType }}">
             {%- for article in collections.article | reverse | filterCurrentPage(page) | limit(3) -%}
                 <li class="articles__item articles__item{{ articleType }}">
-                    {% include 'article-card.njk' %}
+                    {% include 'article-card/article-card.njk' %}
                 </li>
             {%- endfor -%}
         </ul>
