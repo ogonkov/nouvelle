@@ -14,16 +14,21 @@ location:
 Программа
 
 <ol>
-    {% eventitem speaker="Никита Дубко", start='11:10', id="anchor" %}
-        <h3><code>&lt;a&gt;</code></h3>
-        <p>
-            Что такое поисковая выдача? По факту — страница с десятками ссылок.
-            Поэтому поисковики довольно трепетно относятся к тому, как отдавать
-            ценный тег <code>&lt;a&gt;</code> пользователю. Давайте разберёмся,
-            какие тайны в себе хранит этот тег, который с нами ещё с самого
-            первого стандарта HTML.
+    {% for item in collections.minsk_2019 %}
+    <li>
+        <time>{{ item.data.date | time }}</time>
 
-            <a href="https://wsd.events/2019/12/07/pres/anchor/">Слайды в HTML (6,2 Мб)</a>
-        </p>
-    {% endeventitem %}
+        <div>
+            <h3>{{ item.data.title | safe }}</h3>
+
+            {{ item.templateContent | safe }}
+
+            <p>
+                <a href="#{{ item.data.speaker | slugify }}">
+                    {{ item.data.speaker }}
+                </a>
+            </p>
+        </div>
+    </li>
+    {% endfor %}
 </ol>
