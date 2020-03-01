@@ -2,9 +2,21 @@
 layout: page.njk
 ---
 
+{% from 'venue/_location.njk' import venue_location %}
+
 {% include 'header.njk' %}
 
 <main class="main">
+    <h2>{{ location.city }}, {{ date | ruDate }}</h2>
+
+    <p>
+        {% if date | isFuture %}
+            Конференция пройдёт в&nbsp;{{ venue_location(location) }}
+        {% else %}
+            Конференция прошла в&nbsp;{{ venue_location(location) }}
+        {% endif %}
+    </p>
+
     {{ content | safe }}
 </main>
 

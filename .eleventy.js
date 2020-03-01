@@ -116,6 +116,10 @@ module.exports = function(config) {
         return markdown.render(value);
     });
 
+    config.addFilter('isFuture', (/* Date */value) => {
+        return value.getTime() > Date.now();
+    });
+
     // Трансформации
 
     config.addTransform('htmlmin', (content, outputPath) => {

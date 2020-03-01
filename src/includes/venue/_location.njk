@@ -1,0 +1,22 @@
+{% from 'page/_link.njk' import link %}
+
+{% macro venue_location(location) -%}
+    {%- set venue_link -%}
+        {%- if location.venue_name and location.venue_url -%}
+            <a href="{{ location.venue_url }}">
+                {{- location.venue_name -}}
+            </a>
+        {%- elif location.venue_name -%}
+            {{ location.venue_name }}
+        {%- else -%}
+            TBA
+        {%- endif -%}
+    {%- endset -%}
+
+    {%- set venue_location -%}
+        {{- venue_link | safe }}
+        {%- if location.address %}, {{ location.address }}{% endif %}
+    {%- endset -%}
+
+    {{- venue_location | safe }}
+{% endmacro %}
