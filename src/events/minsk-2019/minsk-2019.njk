@@ -18,20 +18,22 @@ location:
     <li>
         <time>{{ item.data.date | time }}</time>
 
-        {% if item.data.speaker %}
-        <div id="{{ item.fileSlug }}">
-            <h3>{{ item.data.title | safe }}</h3>
+        {% if item.data.title %}
+            <div id="{{ item.fileSlug }}">
+                <h3>{{ item.data.title | safe }}</h3>
 
-            {{ item.templateContent | safe }}
+                {{ item.templateContent | safe }}
 
-            <p>
-                <a href="#{{ item.data.speaker | slugify }}">
-                    {{ item.data.speaker }}
-                </a>
-            </p>
-        </div>
+                {% if item.data.speaker %}
+                <p>
+                    <a href="#{{ item.data.speaker | slugify }}">
+                        {{ item.data.speaker }}
+                    </a>
+                </p>
+                {% endif %}
+            </div>
         {% else %}
-        {{ item.templateContent | safe }}
+            {{ item.templateContent | safe }}
         {% endif %}
     </li>
     {% endfor %}
