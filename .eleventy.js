@@ -1,5 +1,9 @@
 const {slugify} = require('transliteration');
 
+function toTime(value) {
+    return String(value).padStart(2, '0');
+}
+
 module.exports = function(config) {
     config.addPassthroughCopy('src/favicon.ico');
     config.addPassthroughCopy('src/robots.txt');
@@ -127,7 +131,11 @@ module.exports = function(config) {
     });
 
     config.addFilter('time', function(/* Date */value) {
-        return `${value.getHours()}:${value.getMinutes()}`;
+        return `${
+            toTime(value.getHours())
+        }:${
+            toTime(value.getMinutes())
+        }`;
     });
 
     // Трансформации
