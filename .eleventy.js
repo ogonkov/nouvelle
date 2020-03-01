@@ -126,6 +126,10 @@ module.exports = function(config) {
         return value.getTime() > Date.now();
     });
 
+    config.addFilter('time', function(/* Date */value) {
+        return `${value.getHours()}:${value.getMinutes()}`;
+    });
+
     // Трансформации
 
     config.addTransform('htmlmin', (content, outputPath) => {
