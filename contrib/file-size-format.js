@@ -29,9 +29,10 @@ const units = {
 
 /**
  * @param {number} bytes
+ * @param {number} [fractionDigits=2]
  * @returns {string}
  */
-module.exports = function(bytes) {
+module.exports = function(bytes, fractionDigits = 2) {
     let converter = '';
 
     if (bytes > KB) {
@@ -51,5 +52,12 @@ module.exports = function(bytes) {
         return `${bytes} ${unit}`;
     }
 
-    return `${converters[converter](bytes)} ${unit}`;
+    let value = converters[converter](bytes);
+
+    if (value % 1 !== 0) {
+        value = value.toFixed(fractionDigits);
+        value = value.replace(/0$/, '');
+    }
+
+    return `${value} ${unit}`;
 };
