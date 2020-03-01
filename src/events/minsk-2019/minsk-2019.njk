@@ -18,7 +18,7 @@ location:
     <li>
         <time>{{ item.data.date | time }}</time>
 
-        <div>
+        <div id="{{ item.fileSlug }}">
             <h3>{{ item.data.title | safe }}</h3>
 
             {{ item.templateContent | safe }}
