@@ -26,7 +26,7 @@ location:
 
                 {% if item.data.speaker %}
                 <p>
-                    <a href="#{{ item.data.speaker | slugify }}">
+                    <a href="#{{ item.data.speaker | slug }}">
                         {{ item.data.speaker }}
                     </a>
                 </p>
