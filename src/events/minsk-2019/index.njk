@@ -18,7 +18,7 @@ location:
 <ol>
     {% for item in collections.minsk_2019 %}
     <li>
-        <time>{{ item.data.date | time }}</time>
+        <time datetime="{{ item.data.date | isoDate }}">{{ item.data.date | time }}</time>
 
         {% if item.data.title %}
             <div id="{{ item.fileSlug }}">
