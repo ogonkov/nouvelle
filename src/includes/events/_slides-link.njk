@@ -1,0 +1,8 @@
+{% macro slides_link(event_id, speech, format='html') %}
+    /conf/
+    {{- event_id -}}
+    /slides-
+    {{- speech -}}
+    {{- '.' if format != 'html' -}}
+    {{- format if format != 'html' else '/' }}
+{% endmacro %}

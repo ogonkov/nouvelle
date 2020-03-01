@@ -11,6 +11,8 @@ location:
     venue_url: http://eventspace.by/
 ---
 
+{% from 'events/_slides-link.njk' import slides_link %}
+
 Программа
 
 <ol>
@@ -23,6 +25,18 @@ location:
                 <h3>{{ item.data.title | safe }}</h3>
 
                 {{ item.templateContent | safe }}
+
+                {% if item.data.slides %}
+                    {% for slide in item.data.slides %}
+                    <p>
+                        <a
+                            href="{{ slides_link(page.fileSlug, item.fileSlug) }}"
+                        >
+                            Слайды в&nbsp;{{ slide.format | upper }} ({{ slide.size | filesizeformat }})
+                        </a>
+                    </p>
+                    {% endfor %}
+                {% endif %}
 
                 {% if item.data.speaker %}
                 <p>
