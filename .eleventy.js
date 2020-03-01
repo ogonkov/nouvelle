@@ -1,3 +1,5 @@
+const fileSizeFormat = require('./contrib/file-size-format');
+
 function toTime(value) {
     return String(value).padStart(2, '0');
 }
@@ -90,6 +92,10 @@ module.exports = function(config) {
                 return match.slice(0, -1) + prefix + match.slice(-1);
             }
         });
+    });
+
+    config.addFilter('filesizeformat', function(/* number */ bytes) {
+        return fileSizeFormat(bytes);
     });
 
     // Даты
