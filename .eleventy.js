@@ -10,7 +10,7 @@ module.exports = function(config) {
         const set = new Set();
         for (const item of collection.getAllSorted()) {
             if ('tags' in item.data) {
-                const tags = item.data.tags;
+                let tags = item.data.tags;
                 if (typeof tags === 'string') {
                     tags = [tags];
                 }
