@@ -18,6 +18,7 @@ location:
     <li>
         <time>{{ item.data.date | time }}</time>
 
+        {% if item.data.speaker %}
         <div id="{{ item.fileSlug }}">
             <h3>{{ item.data.title | safe }}</h3>
 
@@ -29,6 +30,9 @@ location:
                 </a>
             </p>
         </div>
+        {% else %}
+        {{ item.templateContent | safe }}
+        {% endif %}
     </li>
     {% endfor %}
 </ol>
