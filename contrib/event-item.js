@@ -1,3 +1,5 @@
+const {slugify} = require('transliteration');
+
 module.exports = function(nunjucks) {
     return function EventItem() {
         this.tags = ['eventitem'];
@@ -22,7 +24,7 @@ module.exports = function(nunjucks) {
                         ${body()}
 
                         <p>
-                            <a href="#${args.speakerSlug}">${args.speaker}</a>
+                            <a href="#${slugify(args.speaker)}">${args.speaker}</a>
                         </p>
                     </div>
                 </li>`
