@@ -33,7 +33,8 @@
     "remark-lint-ordered-list-marker-value": "^1.0.4",
     "remark-lint-strong-marker": "^1.0.3",
     "remark-lint-unordered-list-marker-style": "^1.0.3",
-    "stylelint": "^13.0.0"
+    "stylelint": "^13.0.0",
+    "transliteration": "^2.1.8"
   },
   "browserslist": [
     "last 2 version",
