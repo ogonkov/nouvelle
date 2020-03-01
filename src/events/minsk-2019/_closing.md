@@ -1,6 +1,7 @@
 ---
 date: 2019-12-07T19:10:00+03:00
 tags: minsk_2019
+permalink: false
 ---
 
 Закрытие

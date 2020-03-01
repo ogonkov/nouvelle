@@ -7,6 +7,7 @@ slides:
     -
         format: pdf
         size: 2726298
+permalink: false
 ---
 
 Популярность JAMstack набирает обороты, локальные сообщества есть уже более
