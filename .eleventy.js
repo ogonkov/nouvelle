@@ -1,3 +1,5 @@
+const {slugify} = require('transliteration');
+
 const eventItem = require('./contrib/event-item');
 
 module.exports = function(config) {
@@ -88,6 +90,10 @@ module.exports = function(config) {
                 return match.slice(0, -1) + prefix + match.slice(-1);
             }
         });
+    });
+
+    config.addFilter('slugify', function(value) {
+        return slugify(value);
     });
 
     // Даты
