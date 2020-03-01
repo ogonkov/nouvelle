@@ -1,3 +1,5 @@
+const eventItem = require('./contrib/event-item');
+
 module.exports = function(config) {
     config.addPassthroughCopy('src/favicon.ico');
     config.addPassthroughCopy('src/robots.txt');
@@ -185,6 +187,11 @@ module.exports = function(config) {
                 );
             };
         }();
+    });
+
+    config.addNunjucksTag('eventitem', function(nunjucksEngine) {
+        const EventItemExtension = eventItem(nunjucksEngine);
+        return new EventItemExtension();
     });
 
     return {
