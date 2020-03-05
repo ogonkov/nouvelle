@@ -52,3 +52,26 @@ location:
     </li>
     {% endfor %}
 </ol>
+
+<h2>Докладчики</h2>
+
+{% for item in collections.minsk_2019 %}
+    {% if item.data.speaker %}
+        {% for speaker in collections.speakers %}
+            {% if speaker.data.name == item.data.speaker %}
+            <div id="{{ item.data.speaker | slug }}">
+                <h3>
+                    {{ item.data.speaker }}
+                    {% if speaker.data.socials.twitter %}
+                    <a href="https://twitter.com/{{ speaker.data.socials.twitter }}">
+                        @{{ speaker.data.socials.twitter }}
+                    </a>
+                    {% endif %}
+                </h3>
+
+                {{ speaker.templateContent | safe }}
+            </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endfor %}
