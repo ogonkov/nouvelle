@@ -36,7 +36,7 @@
             {%- endfor -%}
         </li>
 
-        {% set conference = collections.conference | first %}
+        {% set conference = collections.conference | d([]) | first %}
         {%- if conference and conference.date | isFuture -%}
         <li class="informer__item informer__item--calendar">
             <a class="informer__link" href="{{ conference.data.url }}">
