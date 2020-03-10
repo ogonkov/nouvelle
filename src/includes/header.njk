@@ -35,14 +35,16 @@
                 </a>
             {%- endfor -%}
         </li>
+
+        {% set conference = collections.conference | first %}
+        {%- if conference and conference.date | isFuture -%}
         <li class="informer__item informer__item--calendar">
-            {%- for conference in collections.conference -%}
-                <a class="informer__link" href={{ conference.data.url }}>
-                    <strong class="informer__meta informer__meta--calendar">
-                        <time datetime="{{ conference.data.date | isoDate }}">
-                            {{ conference.data.date | shortDate }}
-                        </time>
-                    </strong>
+            <a class="informer__link" href={{ conference.data.url }}>
+                <strong class="informer__meta informer__meta--calendar">
+                    <time datetime="{{ conference.data.date | isoDate }}">
+                        {{ conference.data.date | shortDate }}
+                    </time>
+                </strong>
                 <p class="informer__text">
                     {{ conference.data.title }}
                 </p>
@@ -64,8 +66,8 @@
                     </g>
                 </svg>
             </a>
-            {%- endfor -%}
         </li>
+        {%- endif -%}
     </ul>
     {% endif %}
 </header>
