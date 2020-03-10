@@ -39,7 +39,7 @@
         {% set conference = collections.conference | first %}
         {%- if conference and conference.date | isFuture -%}
         <li class="informer__item informer__item--calendar">
-            <a class="informer__link" href={{ conference.data.url }}>
+            <a class="informer__link" href="{{ conference.data.url }}">
                 <strong class="informer__meta informer__meta--calendar">
                     <time datetime="{{ conference.data.date | isoDate }}">
                         {{ conference.data.date | shortDate }}
