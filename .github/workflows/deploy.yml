@@ -3,7 +3,7 @@ on: [push]
 
 jobs:
   deploy:
-    if: secrets.key
+    if: contains(secrets, 'key')
     runs-on: ubuntu-latest
     strategy:
       matrix:
