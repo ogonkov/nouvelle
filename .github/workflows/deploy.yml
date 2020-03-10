@@ -3,13 +3,13 @@ on: [push]
 
 jobs:
   deploy:
-    if: contains(secrets, 'key')
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [13.x]
     steps:
       - uses: actions/checkout@v2
+        if: contains(secrets, 'key')
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
