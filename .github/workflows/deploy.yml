@@ -9,7 +9,7 @@ jobs:
         node-version: [13.x]
     steps:
       - uses: actions/checkout@v2
-        if: contains(secrets, 'key')
+        if: secrets.key
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
