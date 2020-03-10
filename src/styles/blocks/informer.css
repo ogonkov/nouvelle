@@ -18,15 +18,14 @@
 
 @media (min-width: 568px) {
     .informer {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-column-gap: 20px;
+        display: flex;
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 769px) {
     .informer {
-        grid-column-gap: 49px;
+        margin-left: -10px;
+        margin-right: -10px;
     }
 }
 
@@ -65,6 +64,9 @@
 @media (min-width: 769px) {
     .informer__item {
         padding-left: 0;
+        flex: 1 1 178px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
 
