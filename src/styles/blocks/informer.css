@@ -64,7 +64,9 @@
 @media (min-width: 769px) {
     .informer__item {
         padding-left: 0;
-        flex: 1 1 178px;
+        flex-shrink: 1;
+        flex-grow: 1;
+        flex-basis: 178px;
         margin-left: 10px;
         margin-right: 10px;
     }
