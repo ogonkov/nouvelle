@@ -2,7 +2,7 @@ name: Deploy
 on: [push]
 
 env:
-  HAS_DEPLOY: "$(secrets.key != '')"
+  HAS_DEPLOY: "$(secrets.key)"
 
 jobs:
   deploy:
