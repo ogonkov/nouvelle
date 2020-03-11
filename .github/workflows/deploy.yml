@@ -6,7 +6,7 @@ env:
 
 jobs:
   deploy:
-    if: ${{env.HAS_DEPLOY}}
+    if: env.HAS_DEPLOY
     runs-on: ubuntu-latest
     strategy:
       matrix:
