@@ -7,6 +7,7 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    if: github.event.comment
     strategy:
       matrix:
         node-version: [13.x]
