@@ -7,7 +7,7 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: github.event.comment
+    if: secrets.key != ''
     strategy:
       matrix:
         node-version: [13.x]
