@@ -1,6 +1,9 @@
 name: Deploy
 on: [push]
 
+env:
+  HAS_DEPLOY: $(secrets.key != '')
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -9,7 +12,7 @@ jobs:
         node-version: [13.x]
     steps:
       - uses: actions/checkout@v2
-        if: secrets.key == ''
+        if: HAS_DEPLOY
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
