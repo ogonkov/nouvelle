@@ -7,7 +7,7 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: job
+    if: steps
     strategy:
       matrix:
         node-version: [13.x]
