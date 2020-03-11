@@ -11,6 +11,9 @@ jobs:
       matrix:
         node-version: [13.x]
     steps:
+      - name: Debug
+        run: |
+          echo $HAS_DEPLOY
       - uses: actions/checkout@v2
         if: env.HAS_DEPLOY
       - uses: actions/setup-node@v1
