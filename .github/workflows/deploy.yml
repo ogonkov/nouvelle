@@ -6,6 +6,7 @@ env:
 
 jobs:
   deploy:
+    if: ${{secrets.key != ''}}
     runs-on: ubuntu-latest
     strategy:
       matrix:
